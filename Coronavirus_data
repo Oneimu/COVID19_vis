@@ -1,0 +1,81 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+#reading the four csv files
+italy_r = pd.read_csv(r"C:\Users\Blessing\Downloads\Uworld\covid19_italy.csv")
+brazil_r = pd.read_csv(r"C:\Users\Blessing\Downloads\Uworld\covid19_brazil.csv")
+UK_r = pd.read_csv(r"C:\Users\Blessing\Downloads\Uworld\covid19_UK.csv")
+US_r = pd.read_csv(r"C:\Users\Blessing\Downloads\Uworld\covid19_US.csv")
+
+#intializing the each necessary column
+italy_deaths = italy_r.deaths
+italy_cases =italy_r.case
+
+UK_cases =UK_r.cases
+UK_deaths =UK_r.deaths
+
+
+US_cases =US_r.cases
+US_date = US_r.Date
+
+
+brazil_cases =brazil_r.cases
+brazil_deaths=brazil_r.deaths
+date = brazil_r.Date
+
+#plotting the data for Italy's Coronavirus cases
+plt.figure(figsize=(15,7))
+plt.plot( date, italy_cases, 'r', marker='>')
+plt.title("Italy Coronavirus Cases Per Week", size=18)
+plt.ylabel("Number of cases", size=18)
+plt.xlabel("Date", size=18)
+
+#plotting the data for Italy's deaths cases
+plt.figure(figsize=(15,7))
+plt.plot(date, italy_deaths, "black",marker=">")
+plt.title("Italy COVID-19 Deaths Per Week", size=18)
+plt.ylabel("Number of Deaths", size=18)
+plt.xlabel("Date", size=18)
+
+#plotting the data for Brazil Coronavirus cases
+plt.figure(figsize=(15,7))
+plt.plot( date, brazil_cases, 'r', marker='>')
+plt.title("Brazil Coronavirus Cases Per Week", size=18)
+plt.ylabel("Number of cases", size=18)
+plt.xlabel("Date", size=18)
+
+##plotting the data for Brazil's deaths cases
+plt.figure(figsize=(15,7))
+plt.plot(date, brazil_deaths, "black",marker=">")
+plt.title("Brazil COVID-19 Deaths Per Week", size=18)
+plt.ylabel("Number of Deaths", size=18)
+plt.xlabel("Date", size=18)
+
+#plotting the data for US coronavirus cases
+plt.figure(figsize=(15,7))
+plt.plot(date, US_cases, "red",marker=">")
+plt.title("United State COVID-19 Cases Per Week", size=18)
+plt.ylabel("Number of Cases", size=18)
+plt.xlabel("Date", size=18)
+plt.show()
+
+#plotting the data for US deaths cases
+plt.figure(figsize=(15,7))
+plt.plot(date, US_deaths, "black",marker=">")
+plt.title("United States COVID-19 Deaths Per Week", size=18)
+plt.ylabel("Number of Deaths", size=18)
+plt.xlabel("Date", size=18)
+
+#plotting the data for UK coronavirus cases
+plt.figure(figsize=(15,7))
+plt.plot(date, UK_cases, "red",marker=">")
+plt.title("United Kindgom COVID-19 Cases Per Week", size=18)
+plt.ylabel("Number of Cases", size=18)
+plt.xlabel("Date", size=18)
+
+#plotting the data for uK deaths cases
+plt.figure(figsize=(15,7))
+plt.plot(date, UK_deaths, "black",marker=">")
+plt.title("United Kingdom COVID-19 Deaths Per Week", size=18)
+plt.ylabel("Number of Deaths", size=18)
+plt.xlabel("Date", size=18)
